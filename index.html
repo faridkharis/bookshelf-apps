@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf App</title>
+
+    <!-- Boxicons --------------->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- CSS --------------->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav container">
+            <a href="home.html" class="nav__logo">Bookshelf</a>
+
+            <div class="nav__form">
+                <div class="search__bar">
+                    <input type="text" class="search__input" id="search-input"
+                        placeholder="Cari judul atau penulis buku . . .">
+                </div>
+                <button class="primary__button add__button" id="add-button">
+                    <i class='bx bx-plus'></i>
+                    Tambah Buku
+                </button>
+            </div>
+
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Input Modal --------------->
+        <section>
+            <div class="input__modal" id="input-modal">
+                <div class="input__modal-content card">
+                    <i class='bx bx-x input__modal-close' id="input-close"></i>
+                    <h4 class="section__title-input">Tambahkan Buku Baru</h4>
+                    <form id="input-form" class="input__form">
+                        <div class="input__container">
+                            <input id="input-book-title" class="input__text" type="text" autocomplete="off"
+                                placeholder=" " required>
+                            <label for="input-book-title" class="input__label">Judul</label>
+                        </div>
+                        <div class="input__container">
+                            <input id="input-book-author" class="input__text" type="text" autocomplete="off"
+                                placeholder=" " required>
+                            <label for="input-book-author" class="input__label">Penulis</label>
+                        </div>
+                        <div class="input__container">
+                            <input id="input-book-year" class="input__text" type="number" autocomplete="off"
+                                placeholder=" " required>
+                            <label for="input-book-year" class="input__label">Tahun</label>
+                        </div>
+                        <div class="input__checkbox">
+                            <input type="checkbox" class="input__checkbox-check" id="checkbox-is-read" />
+                            <label for="checkbox-is-read">Selesai Dibaca</label>
+                        </div>
+                        <div>
+                            <input type="file" id="upload-image" name="bookImage"
+                                accept="image/png, image/gif, image/jpeg" hidden required>
+                            <span class="upload__button" id="custom-upload-button">Upload
+                                gambar buku</span>
+                        </div>
+                        <button id="book-submit" type="submit" class="primary__button">
+                            Tambahkan Buku
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Input Dialog --------------->
+        <section>
+            <div class="input__modal" id="input-dialog">
+                <div class="input__dialog card">
+                    <h4>Buku berhasil ditambahkan</h4>
+                    <button class="primary__button" id="input-dialog-button">
+                        Oke
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delete Dialog --------------->
+        <section>
+            <div class="input__modal" id="delete-dialog">
+                <div class="delete__dialog card">
+                    <h4>Apakah Anda yakin akan menghapus buku ini?</h4>
+                    <div class="delete__dialog-button">
+                        <button class="delete__button" id="delete-button-yes">
+                            Ya
+                        </button>
+                        <button class="primary__button" id="delete-button-no">
+                            Tidak
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section__header">
+                <h2 class="section__title">Belum Selesai Dibaca</h2>
+
+                <div class="section__button">
+                    <div class="arrow__button unread__button-prev">
+                        <i class='bx bx-chevron-left'></i>
+                    </div>
+                    <div class="arrow__button unread__button-next">
+                        <i class='bx bx-chevron-right'></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bookshelf__container unread__bookshelf bookshelfswiper">
+                <div class="swiper-wrapper" id="unread-bookshelf-wrapper">
+
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="section__header">
+                <h2 class="section__title">Selesai Dibaca</h2>
+
+                <div class="section__button">
+                    <div class="arrow__button read__button-prev">
+                        <i class='bx bx-chevron-left'></i>
+                    </div>
+                    <div class="arrow__button read__button-next">
+                        <i class='bx bx-chevron-right'></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bookshelf__container read__bookshelf swiper">
+                <div class="swiper-wrapper" id="read-bookshelf-wrapper">
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Dicoding Submisson</p>
+        <p>Belajar Membuat Front-End Web untuk Pemula</p>
+        <h4>© M Farid Kharismawan</h4>
+    </footer>
+
+    <!-- JAVASCRIPT --------------->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
